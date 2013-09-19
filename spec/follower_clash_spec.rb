@@ -27,3 +27,13 @@ describe FollowerClash::Comparer do
     end
   end
 end
+
+describe FollowerClash::User do
+  describe '#followers' do
+    it 'returns the number of followers from the Twitter API' do
+      Twitter::Client.stub_chain(:new, :configure, :user, :followers_count).and_return(20)
+
+      expect(FollowerClash::User.new('ornellasmike').followers).to eq(20)
+    end
+  end
+end
