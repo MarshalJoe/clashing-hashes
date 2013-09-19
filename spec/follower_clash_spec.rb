@@ -14,7 +14,7 @@ describe FollowerClash::Comparer do
       end
     end
 
-    context 'when user 1 and user 2 have the same number of followers'
+    context 'when user 1 and user 2 have the same number of followers' do
       it 'should return tie' do
         user1 = double("user1")
         user2 = double("user2")

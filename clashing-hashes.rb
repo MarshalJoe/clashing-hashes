@@ -10,7 +10,9 @@ get '/' do
 end
 
 post '/twitter' do
-  @hash_one = params[:first_hash]
-  @hash_two = params[:second_hash]
+  @user1 = FollowerClash::User.new(params[:first_hash])
+  @user2 = FollowerClash::User.new(params[:second_hash])
+  @result = FollowerClash::Comparer.new(@user1, @user2)
+
   erb :twitter_results
 end
