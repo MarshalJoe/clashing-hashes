@@ -3,6 +3,7 @@ require 'bundler/setup'
 require 'sinatra'
 require 'sinatra/reloader'
 require 'twitter'
+require_relative 'lib/follower_clash'
 
 get '/' do
   erb :index
